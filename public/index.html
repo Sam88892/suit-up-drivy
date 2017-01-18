@@ -2,21 +2,84 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css" />
   </head>
+  
   <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
+      
+      <div id="contact-form">
+    
+	<div>
+		<h1 align="center">Drivy !</h1> 
+		<h4 align="center">Rent your car !</h4> 
+	</div>
+		<p id="failure">Oopsie...message not sent.</p>  
+		<p id="success">Your price was sent successfully. Thank you!</p>
+
+		   <form method="post" action="/" onsubmit="function (){return false;}">
+			<div>
+                            <div id="car">
+		      <label for="model">
+		      	<span class="required">Model: *</span> 
+		      	<input type="text" id="Model" name="Model" value="" placeholder="Your Model" required="required" tabindex="1" autofocus="autofocus" />
+		      </label> 
+			
+			<div>
+		      <label for="price-by-day">
+		      	<span class="required">Price by day: *</span>
+		      	<input type="number" id="priceByDay" name="priceByDay" value="" placeholder="Your price per day" tabindex="2" required="required" />
+		      </label>  
+			</div>
+			<div>	
+                      <label for="price-by-km">
+		      	<span class="required">Price by Km: *</span>
+		      	<input type="number" id="priceByKm" name="priceByKm" value="" placeholder="Your price per km" tabindex="3" required="required" />
+		      </label>  
+			</div>
+                                </div>
+                            <div id="rental">
+			<div>	
+                      <label for="begin">
+		      	<span class="required">Begin: *</span>
+		      	<input type="date" id="begin" name="begin" value="" placeholder="Your begin date" tabindex="4" required="required" />
+		      </label>  
+			</div>
+			<div>	
+                      <label for="end">
+		      	<span class="required">End: *</span>
+		      	<input type="date" id="end" name="begin" value="" placeholder="Your end date" tabindex="5" required="required" />
+		      </label>  
+			</div>
+			<div>	
+                        <label for="distance">
+		      	<span class="required">Price by Km: *</span>
+		      	<input type="number" id="distance" name="distance" value="" placeholder="Your distance" tabindex="6" required="required" />
+		      </label>  
+			</div>
+                       <div>
+                      <label for="option">
+		      	<span class="required">Deductible option: *</span>
+                      <input type="checkbox" id="option" name="Deductible option" value="" placeholder="Deductible option" tabindex="7" required="required" />
+                      
+		      </label>  
+                            </div>
+			</div>
+			<div>	
+		      
+                           
+			</div>
+			<div>		           
+		      <button name="submit" type="submit" id="compute" >COMPUTE</button> 
+			</div>
+                            <div id="actors"></div>
+		   </form>
+
+	
+      
+    
+
     <script id="template" type="x-tmpl-mustache">
       {{#actors}}
         <div class="actor">
@@ -31,3 +94,8 @@
     <script src="index.js"></script>
   </body>
 </html>
+
+
+
+    
+	
